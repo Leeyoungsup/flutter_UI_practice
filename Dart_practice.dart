@@ -2,8 +2,17 @@
 
 
 void main(){
-  var name = 'Dart';
-  var age = 25;
-  var greeting = "Hello, $name!, you are ${age+2} years old.";
-  print(greeting);
+  var oldFrinends=[
+    '철수',
+    '영희',
+    '훈이',
+  ];
+  var newFriends=[
+    '짱구',
+    '유리',
+    '맹구',
+    for (var friend in oldFrinends) '친구: $friend',
+
+  ];
+  print(newFriends);
 }
