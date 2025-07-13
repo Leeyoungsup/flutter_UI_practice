@@ -1,8 +1,19 @@
 // ignore: file_names
+import 'dart:ffi';
+
 void main(){
-  late final String? name;
-  // print(name); // 선언 전에 접근하면 오류 발생
-  name = null;
-  // name='Dart'; //단 한번만 초기화 가능
-  print("Hello, $name!");
+  String name = 'Dart';
+  int age = 10;
+  double height = 1.75;
+  bool isStudent = true;
+  var city = 'Seoul';
+  const pi = 3.14;
+  final currentTime = DateTime.now();
+  print('Hello, $name!');
+  print('Age: $age');
+  print('Height: $height m');
+  print('Is Student: $isStudent');
+  print('City: $city');
+  print('Pi: $pi');
+  print('Current Time: $currentTime');
 }
