@@ -2,7 +2,8 @@
 
 
 void main(){
-  bool giveMeFive= true;
-  List<int> numbers= [1, 2, 3, 4, if(giveMeFive) 5,];
-  print(numbers);
+  var name = 'Dart';
+  var age = 25;
+  var greeting = "Hello, $name!, you are ${age+2} years old.";
+  print(greeting);
 }
