@@ -69,6 +69,13 @@ void main() {
   print('\n13. 클로저:');
   Function multiplyBy3 = createMultiplier(3);
   print('7 × 3 = ${multiplyBy3(7)}');
+  
+  // 14. Named Arguments 예제
+  print('\n14. Named Arguments 예제:');
+  displayPersonInfo(name: '홍길동', age: 25);
+  displayPersonInfo(name: '김영희', age: 30, city: '서울', job: '개발자');
+  displayPersonInfo(age: 22, name: '이철수', job: '학생');  // 순서 바뀌어도 OK
+  
   List<int> numbers1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   print('원본 리스트: $numbers1');
 
@@ -120,7 +127,7 @@ String formatName(String firstName, String lastName) =>
     '${firstName.toUpperCase()} ${lastName.toUpperCase()}';
 
 // 9. 고차 함수 - 다른 함수를 매개변수로 받는 함수
-void performOperation(int a, int b, int Function(int, int) operation) {
+void performOperation(int a, int b, int Function(int, int) operation,) {
   int result = operation(a, b);
   print('연산 결과: $result');
 }
@@ -152,6 +159,30 @@ List<int> filterEvenNumbers(List<int> numbers) =>numbers.where((number) => numbe
 // 14. 클로저 (Closure) - 외부 변수에 접근하는 함수
 Function createMultiplier(int multiplier) {
   return (int value) => value * multiplier;
+}
+
+// 14-1. Named Arguments 예제 함수
+void displayPersonInfo({
+  required String name,     // 필수 Named Argument
+  required int age,         // 필수 Named Argument
+  String? city,             // 선택적 Named Argument
+  String? job,              // 선택적 Named Argument
+  String country = '한국'    // 기본값이 있는 Named Argument
+}) {
+  print('=== 인물 정보 ===');
+  print('이름: $name');
+  print('나이: $age세');
+  
+  if (city != null) {
+    print('거주지: $city');
+  }
+  
+  if (job != null) {
+    print('직업: $job');
+  }
+  
+  print('국가: $country');
+  print(''); // 빈 줄
 }
 
 // 15. 비동기 함수 (Async Function) - 예제용
