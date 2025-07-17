@@ -20,11 +20,11 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Hello World'),
-        backgroundColor: Colors.blue,
+        backgroundColor: const Color.fromARGB(255, 156, 159, 211),
       ),
       body: Center(
         child: Text(
-          'Hello, World!',
+          '이게 맞아??',
           style: TextStyle(fontSize: 24),
         ),
       ),
