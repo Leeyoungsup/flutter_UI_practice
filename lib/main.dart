@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 
 class Player {
@@ -19,20 +21,21 @@ class App extends StatelessWidget {
     var userName = Player(name: 'User2');
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 39, 39, 39),
+        backgroundColor: const Color(0xFF181818),
         body: Padding(
           padding: EdgeInsets.only(left: 20, right: 20),
           child: Column(
             children: [
-              SizedBox(height: 80, width: double.infinity),
+              SizedBox(height: 40, width: double.infinity),
               Row(
+                //Menu Bar
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
-                        'Hey, Selena!',
+                        'Hey, ${userName.name}!',
                         style: TextStyle(
                           fontSize: 28,
                           color: Colors.white,
@@ -45,6 +48,75 @@ class App extends StatelessWidget {
                           fontSize: 18,
                           color: Colors.white.withOpacity(0.7),
                         ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: 40),
+              Row(
+                //Total Balance
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Total Balance',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white.withOpacity(0.7),
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        '\$5 194 392',
+                        style: TextStyle(
+                          fontSize: 40,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 40,
+                              vertical: 15,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Color(0xFFF2B33A),
+                              borderRadius: BorderRadius.circular(40),
+                            ),
+                            child: Text(
+                              'Transfer',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 40,
+                              vertical: 15,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(40),
+                            ),
+                            child: Text(
+                              'Request',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
