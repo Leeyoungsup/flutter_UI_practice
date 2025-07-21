@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'widgets/button.dart';
 
 class Player {
   String? name;
@@ -18,13 +19,14 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var userName = Player(name: 'User2');
+    var userName = Player(name: 'User');
     return MaterialApp(
       home: Scaffold(
         backgroundColor: const Color(0xFF181818),
         body: Padding(
           padding: EdgeInsets.only(left: 20, right: 20),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(height: 40, width: double.infinity),
               Row(
@@ -79,41 +81,37 @@ class App extends StatelessWidget {
                       ),
                       SizedBox(height: 20),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 40,
-                              vertical: 15,
-                            ),
-                            decoration: BoxDecoration(
-                              color: Color(0xFFF2B33A),
-                              borderRadius: BorderRadius.circular(40),
-                            ),
-                            child: Text(
-                              'Transfer',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
-                              ),
+                          Button(
+                            text: 'Transfer',
+                            bgColor: Color(0xFFF2B33A),
+                            textColor: Colors.black,
+                          ),
+                          Button(
+                            text: 'Request',
+                            bgColor: Colors.white.withOpacity(0.1),
+                            textColor: Colors.white,
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 100),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Wallets',
+                            style: TextStyle(
+                              fontSize: 36,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(width: 10),
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 40,
-                              vertical: 15,
-                            ),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.1),
-                              borderRadius: BorderRadius.circular(40),
-                            ),
-                            child: Text(
-                              'Request',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
+                          Text(
+                            'view all',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white.withOpacity(0.7),
                             ),
                           ),
                         ],
