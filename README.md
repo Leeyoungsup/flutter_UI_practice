@@ -1,4 +1,4 @@
-"# flutter_webtoon_practice" 
+"# flutter_UI_practice" 
 연습용입니다.
 
 flutter 처음 개발로 공부를 위해 만들어진 repository
